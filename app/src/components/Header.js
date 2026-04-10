@@ -2,7 +2,7 @@
 
 import "./Header.css";
 
-import { SettingsIcon, TrainMyBreathIcon } from "./Icons";
+import { TrainMyBreathIcon } from "./Icons";
 
 export default function Header() {
     return (
