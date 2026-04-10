@@ -4,13 +4,14 @@ const STYLE = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    padding: "20px 0"
+    padding: "30px 0",
+    textAlign: "center"
 };
 
 export default function Footer() {
     return (
         <footer style={STYLE}>
-            <small>©2026 Train My Breath - Respirez mieux, performez mieux.</small>
+            <small>©2026 Train My Breath<br />Respirez mieux, performez mieux.</small>
         </footer>
     );
 }

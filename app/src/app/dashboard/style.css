@@ -3,6 +3,67 @@ div#dashboard {
     flex-direction: column;
 }
 
-div#dashboard > div {
-    padding: 0 20px;
+div#dashboard > div { 
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+div#dashboard > div:nth-child(3) { align-items: center; }
+div#dashboard > div:nth-child(2) > div,
+div#dashboard > div:nth-child(3) > div  {
+    background: linear-gradient(25deg, var(--secondary-color), var(--surface-color));
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border-color);
+    padding: 20px 30px;
+}
+
+div#dashboard > div:nth-child(2) > div > div { gap: 5px; }
+div#dashboard > div:nth-child(2) > div > div > p, 
+div#dashboard > div:nth-child(3) > div > div > p { opacity: .8; }
+div#dashboard > div:nth-child(2) > div > p { gap: 5px; }
+div#dashboard > div:nth-child(2) > div > p > svg { width: 20px; height: 20px; }
+div#dashboard > div:nth-child(3) > div { align-items: flex-start; }
+div#dashboard > div:nth-child(3) > div > div { gap: 10px; }
+div#dashboard > div:nth-child(3) > div > div > h3 { gap: 5px; }
+div#dashboard > div:nth-child(3) > div > div > h3 > svg { width: 20px; height: 20px; }
+
+div#dashboard > div div.exercices {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+div#dashboard div:has(> div.tabs) { justify-content: center; }
+div#dashboard div.tabs {
+    background-color: rgba(0, 0, 0, .05);
+    gap: 20px;
+    border-radius: 8px;
+    padding: 3px;
+    width: 90vw;
+    max-width: 500px;
+}
+
+div#dashboard div.tabs > span {
+    justify-content: center;
+    flex: 1;
+    flex-basis: 0;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: .8rem;
+    font-weight: 600;
+    opacity: .6;
+    cursor: pointer;
+}
+
+div#dashboard div.tabs > span.active {
+    background-color: white;
+    opacity: 1;
+}
+
+div#dashboard div.tabs > span > svg {
+    width: 14px;
+    height: 14px;
 }

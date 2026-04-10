@@ -4,9 +4,10 @@ header {
     backdrop-filter: blur(3px);
     height: 40px;
     padding: 10px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1.5px solid var(--border-color);
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 header > div:first-child {

@@ -2,7 +2,7 @@
 
 import "./Header.css";
 
-import { TrainMyBreathIcon } from "./Icons";
+import { InfoIcon, SettingsIcon, TrainMyBreathIcon } from "./Icons";
 
 export default function Header() {
     return (
@@ -10,6 +10,9 @@ export default function Header() {
             <div className="row">
                 { TrainMyBreathIcon }
                 Train My Breath
+            </div>
+            <div className="row">
+                <span>{ SettingsIcon }</span>
             </div>
         </header>
     );
