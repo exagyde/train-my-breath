@@ -159,5 +159,33 @@
         "totalDuration": 180,
         "repetitions": 15,
         "isActive": true
+    },
+    {
+        "id": "endurance_base",
+        "name": "Respiration endurance",
+        "goal": "endurance",
+        "type": "daily",
+        "description": "Renforce la capacité respiratoire pour les efforts prolongés.",
+        "pattern": [
+            { "phase": "inhale", "duration": 4 },
+            { "phase": "exhale", "duration": 6 }
+        ],
+        "totalDuration": 420,
+        "repetitions": 42,
+        "isActive": true
+    },
+    {
+        "id": "performance_breath",
+        "name": "Contrôle de respiration",
+        "goal": "performance",
+        "type": "daily",
+        "description": "Améliore le contrôle respiratoire et la stabilité sous pression.",
+        "pattern": [
+            { "phase": "inhale", "duration": 4 },
+            { "phase": "exhale", "duration": 4 }
+        ],
+        "totalDuration": 296,
+        "repetitions": 37,
+        "isActive": true
     }
 ]
