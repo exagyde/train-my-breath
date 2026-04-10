@@ -1,0 +1,23 @@
+{
+    "name": "Train My Breath",
+    "short_name": "TrainMyBreath",
+    "description": "Breathing exercises application",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f5f5f5",
+    "theme_color": "#060a0e",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

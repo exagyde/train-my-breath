@@ -1,0 +1,163 @@
+[
+    {
+        "id": "coherence",
+        "name": "Cohérence cardiaque",
+        "goal": "relaxation",
+        "type": "daily",
+        "description": "Ralentit le rythme cardiaque et stabilise le système nerveux.",
+        "pattern": [
+            { "phase": "inhale", "duration": 5 },
+            { "phase": "exhale", "duration": 5 }
+        ],
+        "totalDuration": 300,
+        "repetitions": 30,
+        "isActive": true
+    },
+    {
+        "id": "physio_sigh",
+        "name": "Soupir physiologique",
+        "goal": "relaxation",
+        "type": "focus",
+        "description": "Réduit rapidement le stress et l’anxiété.",
+        "pattern": [
+            { "phase": "inhale", "duration": 2 },
+            { "phase": "inhale", "duration": 1 },
+            { "phase": "exhale", "duration": 4 }
+        ],
+        "totalDuration": 119,
+        "repetitions": 17,
+        "isActive": true
+    },
+    {
+        "id": "resonance",
+        "name": "Respiration résonnante",
+        "goal": "relaxation",
+        "type": "daily",
+        "description": "Optimise la variabilité cardiaque pour une détente profonde.",
+        "pattern": [
+            { "phase": "inhale", "duration": 5.5 },
+            { "phase": "exhale", "duration": 5.5 }
+        ],
+        "totalDuration": 352,
+        "repetitions": 32,
+        "isActive": true
+    },
+    {
+        "id": "breath_4_7_8",
+        "name": "Respiration 4-7-8",
+        "goal": "relaxation",
+        "type": "daily",
+        "description": "Favorise l'endormissement et le relâchement mental.",
+        "pattern": [
+            { "phase": "inhale", "duration": 4 },
+            { "phase": "hold", "duration": 7 },
+            { "phase": "exhale", "duration": 8 }
+        ],
+        "totalDuration": 247,
+        "repetitions": 13,
+        "isActive": true
+    },
+    {
+        "id": "slow_exhale",
+        "name": "Expiration lente",
+        "goal": "relaxation",
+        "type": "daily",
+        "description": "Active le système parasympathique pour un apaisement rapide.",
+        "pattern": [
+            { "phase": "inhale", "duration": 4 },
+            { "phase": "exhale", "duration": 8 }
+        ],
+        "totalDuration": 300,
+        "repetitions": 25,
+        "isActive": true
+    },
+    {
+        "id": "co2_tolerance",
+        "name": "Tolérance CO₂",
+        "goal": "endurance",
+        "type": "training",
+        "description": "Augmente la tolérance à l'essoufflement et retarde la fatigue.",
+        "pattern": [
+            { "phase": "inhale", "duration": 2 },
+            { "phase": "exhale", "duration": 2 },
+            { "phase": "hold", "duration": 10 }
+        ],
+        "totalDuration": 294,
+        "repetitions": 14,
+        "isActive": true
+    },
+    {
+        "id": "cadence_run",
+        "name": "Respiration rythmée",
+        "goal": "endurance",
+        "type": "training",
+        "description": "Synchronise respiration et foulée pour améliorer l'endurance.",
+        "pattern": [
+            { "phase": "inhale", "duration": 3 },
+            { "phase": "exhale", "duration": 3 }
+        ],
+        "totalDuration": 600,
+        "repetitions": 100,
+        "isActive": true
+    },
+    {
+        "id": "nasal_breathing",
+        "name": "Respiration nasale",
+        "goal": "endurance",
+        "type": "training",
+        "description": "Améliore l'efficacité respiratoire et l'endurance de base.",
+        "pattern": [
+            { "phase": "inhale", "duration": 4 },
+            { "phase": "exhale", "duration": 4 }
+        ],
+        "totalDuration": 480,
+        "repetitions": 60,
+        "isActive": true
+    },
+    {
+        "id": "box_breathing",
+        "name": "Respiration contrôlée",
+        "goal": "performance",
+        "type": "focus",
+        "description": "Améliore le contrôle sous pression et la concentration.",
+        "pattern": [
+            { "phase": "inhale", "duration": 4 },
+            { "phase": "hold", "duration": 4 },
+            { "phase": "exhale", "duration": 4 },
+            { "phase": "hold", "duration": 4 }
+        ],
+        "totalDuration": 240,
+        "repetitions": 20,
+        "isActive": true
+    },
+    {
+        "id": "focus_reset",
+        "name": "Recentrer l'attention",
+        "goal": "performance",
+        "type": "focus",
+        "description": "Permet de récupérer rapidement après une erreur ou un stress.",
+        "pattern": [
+            { "phase": "inhale", "duration": 3 },
+            { "phase": "hold", "duration": 2 },
+            { "phase": "exhale", "duration": 5 }
+        ],
+        "totalDuration": 120,
+        "repetitions": 12,
+        "isActive": true
+    },
+    {
+        "id": "triangle_breathing",
+        "name": "Respiration triangle",
+        "goal": "performance",
+        "type": "focus",
+        "description": "Stabilise le mental et améliore la régularité respiratoire.",
+        "pattern": [
+            { "phase": "inhale", "duration": 4 },
+            { "phase": "hold", "duration": 4 },
+            { "phase": "exhale", "duration": 4 }
+        ],
+        "totalDuration": 180,
+        "repetitions": 15,
+        "isActive": true
+    }
+]
