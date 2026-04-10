@@ -8,6 +8,9 @@ import { dataProvider } from "@/data";
 import Header from "@/components/Header";
 import { ActivityIcon, CalendarDaysIcon, CalendarIcon, InfoIcon, TrophyIcon } from "@/components/Icons";
 import Exercise from "@/components/Exercise";
+import Exercices from "@/components/Exercices";
+import Stats from "@/components/Stats";
+import Informations from "@/components/Informations";
 
 export default function DashboardPage() {
     const router = useRouter();
@@ -15,6 +18,7 @@ export default function DashboardPage() {
     const [setting, setSetting] = useState({});
     const [exercises, setExercises] = useState([]);
     const [todayExercise, setTodayExercise] = useState({});
+    const [tab, setTab] = useState(0);
 
     const loadUser = async () => {
         const _user = (await dataProvider.users.getAll())[0];
@@ -75,19 +79,14 @@ export default function DashboardPage() {
             </div>
             <div className="row">
                 <div className="tabs row">
-                    <span className="row active">{ActivityIcon} Exercices</span>
-                    <span className="row">{CalendarIcon} Statistiques</span>
-                    <span className="row">{InfoIcon} Informations</span>
+                    <span className={tab === 0 ? "row active" : "row"} onClick={() => setTab(0)}>{ActivityIcon} Exercices</span>
+                    <span className={tab === 1 ? "row active" : "row"} onClick={() => setTab(1)}>{CalendarIcon} Statistiques</span>
+                    <span className={tab === 2 ? "row active" : "row"} onClick={() => setTab(2)}>{InfoIcon} Informations</span>
                 </div>
             </div>
-            <div>
-                {exercises.length == 0 && <p>Pas d'exercice trouvé.</p>}
-                <div className="exercices row">
-                    {exercises.length > 0 && exercises.map(exercice => (
-                        <Exercise key={exercice.id} data={exercice} />
-                    ))}
-                </div>
-            </div>
+            {tab === 0 && <Exercices data={exercises} />}
+            {tab === 1 && <Stats />}
+            {tab === 2 && <Informations />}
         </div>
     );
 }
