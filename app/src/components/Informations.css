@@ -1,0 +1,14 @@
+div#informations {
+    gap: 20px;
+}
+
+div#informations > hr {
+    width: 80vw;
+    height: 1.5px;
+    border: 0;
+    background-color: var(--border-color);
+}
+
+div#informations > ul {
+    margin: 0;
+}
