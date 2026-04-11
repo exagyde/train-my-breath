@@ -1,0 +1,68 @@
+div#session {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+div#session > h2 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+div#session > p.fadeIn {
+    font-size: 2rem;
+    letter-spacing: .25rem;
+}
+
+div#session > button {
+    font-size: 1.1rem;
+    width: 80vw;
+    max-width: 300px;
+}
+
+div#session p.fadeIn > span {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+div#session > div > span {
+    background-color: var(--background-color);
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: monospace;
+    margin: 30px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+div#session > div > div > span > svg {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: all .5s;
+}
+div#session > div > div > span:has(> svg):hover > svg { opacity: .5; }
+
+div#session > div > div {
+    gap: 10px;
+    width: 80vw;
+    max-width: 300px;
+}
+
+div#session > div > div > button {
+    flex: 1;
+    font-size: 1rem;
+}
+
+div#session > div > div > button > svg {
+    width: 28px;
+    height: 28px;
+}

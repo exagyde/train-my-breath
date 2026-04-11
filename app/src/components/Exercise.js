@@ -2,9 +2,12 @@
 
 import "./Exercise.css";
 
+import { useRouter } from "next/navigation";
 import { SportShoeIcon, TargetIcon, WindIcon } from "@/components/Icons";
 
 export default function Exercise({ data }) {
+    const router = useRouter();
+
     const formatDuration = (duration) => {
         const minutes = Math.floor(duration/60), seconds = duration % 60;
         return `${minutes}min ${seconds.toString().padStart(2, "0")}s`
@@ -25,7 +28,7 @@ export default function Exercise({ data }) {
             <h4>{data.name}</h4>
             <p>{data.description}</p>
             <div className="row">
-                <button>Commencer l'exercice</button>
+                <button onClick={() => router.push(`/dashboard/session?id=${data.id}`)}>Démarrer l'exercice</button>
             </div>
         </div>
     );
