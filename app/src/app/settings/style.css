@@ -1,0 +1,39 @@
+div#settings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+div#settings > div {
+    align-items: center;
+    gap: 20px;
+}
+
+div#settings > div > div {
+    gap: 10px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80vw;
+    max-width: 700px;
+    transition: all .5s;
+}
+div#settings > div > div > div.row { gap: 10px; }
+
+div#settings > div > div button > svg {
+    width: 14px;
+    height: 14px;
+}
+
+div#settings > div > div > h4 {
+    gap: 5px;
+    color: var(--primary-color);
+}
+div#settings > div > div:last-of-type > h4 { color: darkred; }
+div#settings > div > div:last-of-type > button { background-color: darkred; }
+
+div#settings > div > button {
+    width: 70vw;
+    background-color: var(--primary-color);
+}

@@ -68,7 +68,15 @@ export default function DashboardPage() {
     }, [router]);
 
     useEffect(() => {
-        if (user) isStreakBroken();
+        if (user) {
+            isStreakBroken();
+            const lastSessionDate = new Date(user.lastSessionDate).toLocaleDateString();
+            if (setting && setting.notificationsEnabled && new Date().toLocaleDateString() != lastSessionDate) {
+                new Notification("Train My Breath", {
+                    body: "Content de vous revoir, n'oubliez pas votre exercice du jour !", icon: "/icon-512x512.png"
+                });
+            }
+        }
     }, [user]);
 
     useEffect(() => {

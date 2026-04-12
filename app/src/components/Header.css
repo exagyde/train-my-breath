@@ -15,4 +15,11 @@ header > div:first-child {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
 }
+
+header > div:last-child > span {
+    cursor: pointer;
+    transition: opacity .5s;
+}
+header > div:last-child > span:hover { opacity: .5; }
