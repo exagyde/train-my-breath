@@ -1,6 +1,6 @@
 div#breath-circle > div {
-    width: 30vh;
-    height: 30vh;
+    width: 25vh !important;
+    height: 25vh !important;
     border-radius: 50%;
     background: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--primary-color));
     background-size: 400% 400%;

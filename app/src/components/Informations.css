@@ -1,5 +1,12 @@
 div#informations {
+    align-items: center;
     gap: 20px;
+}
+
+div#informations > * {
+    gap: 20px;
+    width: 80vw;
+    max-width: 700px;
 }
 
 div#informations > hr {
@@ -9,6 +16,6 @@ div#informations > hr {
     background-color: var(--border-color);
 }
 
-div#informations > ul {
+div#informations > div >ul {
     margin: 0;
 }

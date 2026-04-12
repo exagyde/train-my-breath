@@ -75,7 +75,7 @@ export default function Stats() {
 
     return (
         <div id="stats" className="column">
-            <div className="column" style={{width: "80vw", height: "300px"}}>
+            <div className="column">
                 <h4>Votre voyage (minutes par jour)</h4>
                 <ResponsiveContainer>
                     <BarChart data={getLastDays()}>

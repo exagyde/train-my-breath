@@ -11,7 +11,7 @@ const STYLE = {
 export default function Footer() {
     return (
         <footer style={STYLE}>
-            <small>©2026 Train My Breath<br />Respirez mieux, performez mieux.</small>
+            <small>©2026 Train My Breath<br />Respirez mieux, performez plus.</small>
         </footer>
     );
 }

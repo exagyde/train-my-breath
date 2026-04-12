@@ -22,6 +22,11 @@ div#stats > div.row {
     justify-content: space-between;
 }
 
+div#stats > div:first-child {
+    width: 80vw;
+    height: 300px;
+}
+
 div#stats > div.row > div:last-child {
     text-align: right;
 }
