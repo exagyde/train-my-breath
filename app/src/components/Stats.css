@@ -1,0 +1,41 @@
+div#stats {
+    align-items: center;
+    gap: 20px;
+}
+
+div#stats > div {
+    gap: 10px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80vw;
+    max-width: 700px;
+    transition: all .5s;
+}
+
+div#stats > div:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, .1);
+}
+
+div#stats > div.row {
+    justify-content: space-between;
+}
+
+div#stats > div.row > div:last-child {
+    text-align: right;
+}
+
+div#stats > div.row > div > span {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+div#stats > div > table { border-collapse: collapse; }
+div#stats > div > table tr:not(:last-child) { border-bottom: 1px solid var(--border-color); }
+div#stats > div > table tr > td { padding: 2px; }
+div#stats > div > table td:has(> span > svg) { text-align: right; }
+div#stats > div > table td > span > svg { stroke-width: 2.5; }
+div#stats > div > table td > span.green > svg * { color: green; }
+div#stats > div > table td > span.red > svg * { color: red; }
