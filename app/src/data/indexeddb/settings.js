@@ -17,6 +17,21 @@ export const settings = {
         await (await db).put("settings", setting);
         return setting;
     },
+    async update(id, data) {
+        const db = getDb();
+        if (!db) return;
+        const existing = await (await db).get("settings", id);
+        if (!existing) return null;
+
+        const updated = {
+            ...existing,
+            ...data,
+            updatedAt: Date.now()
+        };
+
+        await (await db).put("settings", updated);
+        return updated;
+    },
     async delete(id) {
         const db = getDb();
         if (!db) return;

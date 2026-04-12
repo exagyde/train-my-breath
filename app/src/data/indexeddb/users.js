@@ -17,6 +17,21 @@ export const users = {
         await (await db).put("users", user);
         return user;
     },
+    async update(id, data) {
+        const db = getDb();
+        if (!db) return;
+        const existing = await (await db).get("users", id);
+        if (!existing) return null;
+
+        const updated = {
+            ...existing,
+            ...data,
+            updatedAt: Date.now()
+        };
+
+        await (await db).put("users", updated);
+        return updated;
+    },
     async delete(id) {
         const db = getDb();
         if (!db) return;

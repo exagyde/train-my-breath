@@ -27,7 +27,7 @@ export async function initDatabase() {
 
     const existingSettings = await database.getAll("settings");
     if (existingSettings.length === 0) {
-        const _setting = createSetting({ notificationsEnabled: false, notificationTime: "09:00", goal: "relaxation", preferredExerciseIds: [] });
+        const _setting = createSetting({ notificationsEnabled: false, notificationTime: "09:00", goal: "relaxation", voiceMuted: false, preferredExerciseIds: [] });
         dataProvider.settings.create(_setting);
     }
 }

@@ -15,12 +15,14 @@ export const dataProvider = {
         getAll: async () => {},
         getById: async (id) => {},
         create: async (setting) => {},
+        update: async (id, data) => {},
         delete: async (id) => {}
     },
     users: {
         getAll: async () => {},
         getById: async (id) => {},
         create: async (user) => {},
+        update: async (id, data) => {},
         delete: async (id) => {}
     }
 };
