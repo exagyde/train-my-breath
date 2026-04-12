@@ -31,9 +31,10 @@ div#stats > div.row > div:last-child {
     text-align: right;
 }
 
+div#stats > div.row:has(> div > span) { flex-wrap: nowrap; }
 div#stats > div.row > div > span {
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 

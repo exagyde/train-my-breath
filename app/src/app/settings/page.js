@@ -146,7 +146,7 @@ END:VCALENDAR`;
                 </div>
                 <div className="column">
                     <h4>Vos préférences</h4>
-                    <p>Personnalisez votre exprience d'entrainement.</p>
+                    <p>Personnalisez votre exprience d&apos;entrainement.</p>
                     <div className="row">
                         <span>Accompagnement par la voix :</span>
                         <select value={isVoiceMuted ?? false} onChange={(e) => setIsVoiceMuted(e.target.value)}>

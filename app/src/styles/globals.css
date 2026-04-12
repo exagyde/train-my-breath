@@ -34,18 +34,22 @@ img, svg {
     -webkit-user-drag: none;
 }
 
-html { overflow-x: hidden; scroll-behavior: smooth; }
+html { 
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    scroll-behavior: smooth; 
+}
+
 body {
     width: 100vw;
     height: 100dvh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    touch-action: none;
     background-color: color-mix(in srgb, var(--background-color) 10%, transparent);
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 body > div { flex: 1; }
 

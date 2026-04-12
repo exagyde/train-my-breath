@@ -99,7 +99,7 @@ export default function DashboardPage() {
                 <div className="row">
                     <div className="column">
                         <h2>{new Date().getHours() < 18 ? "Bonjour" : "Bonsoir"}</h2>
-                        <p>Vous avez complété {formatTodayTime(sessions)} minutes aujourd'hui.</p>
+                        <p>Vous avez complété {formatTodayTime(sessions)} minutes aujourd&apos;hui.</p>
                     </div>
                     <p className="row">{TrophyIcon} Série de {user?.streak ?? 0} jours</p>
                 </div>
@@ -110,7 +110,7 @@ export default function DashboardPage() {
                         <h3 className="row">{CalendarDaysIcon} Exercice du jour</h3>
                         <p><b>Laissez votre respiration vous guider :</b> inspirez lentement, expirez profondément. Relâchez les tensions et retrouvez un rythme naturel. En respirant en conscience, votre corps devient plus fluide, calme et efficace.</p>
                     </div>
-                    {!todayExercise && <p>Pas d'exercice trouvé.</p>}
+                    {!todayExercise && <p>Pas d&apos;exercice trouvé.</p>}
                     <div className="exercices row">
                         {todayExercise && <Exercise data={todayExercise} />}
                     </div>

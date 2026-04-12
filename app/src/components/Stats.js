@@ -99,6 +99,7 @@ export default function Stats() {
             </div>
             <div className="column">
                 <h4>Historique récent</h4>
+                {sessions.length == 0 && (<p>Aucune session trouvée.</p>)}
                 <table>
                     <tbody>
                         {sessions?.length > 0 && sessions.slice(-5).reverse().map(session => (

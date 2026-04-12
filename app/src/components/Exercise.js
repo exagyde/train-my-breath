@@ -28,7 +28,7 @@ export default function Exercise({ data }) {
             <h4>{data.name}</h4>
             <p>{data.description}</p>
             <div className="row">
-                <button onClick={() => router.push(`/dashboard/session?id=${data.id}`)}>Démarrer l'exercice</button>
+                <button onClick={() => router.push(`/dashboard/session?id=${data.id}`)}>Démarrer l&apos;exercice</button>
             </div>
         </div>
     );

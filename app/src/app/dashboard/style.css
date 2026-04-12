@@ -51,7 +51,7 @@ div#dashboard div.tabs > span {
     flex-basis: 0;
     gap: 5px;
     border-radius: 5px;
-    padding: 5px 15px;
+    padding: 5px;
     font-size: .8rem;
     font-weight: 600;
     opacity: .6;
