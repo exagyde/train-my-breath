@@ -5,6 +5,7 @@ import "./style.css";
 import { useEffect, useState, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { dataProvider } from "@/data";
+import { createSession } from "@/data/models/session.model";
 import BreathCircle from "@/components/BreathCircle";
 import { PauseIcon, PlayIcon, SquareIcon, Volume2Icon, VolumeOffIcon } from "@/components/Icons";
 
@@ -13,7 +14,9 @@ export default function SessionContent() {
     const id = searchParams.get("id");
 
     const router = useRouter();
-    const [exercice, setExercice] = useState({});
+    const [user, setUser] = useState({});
+    const [setting, setSetting] = useState({});
+    const [exercise, setExercise] = useState({});
     const [isReady, setIsReady] = useState(() => {
         setTimeout(() => setIsReady(true), 4000);
         return false;
@@ -31,9 +34,48 @@ export default function SessionContent() {
     const [timer, setTimer] = useState(0);
     const [breathTime, setBreathTime] = useState(0);
 
+    const loadUser = async () => {
+        const _user = (await dataProvider.users.getAll())[0];
+        setUser(_user);
+    };
+
+    const loadSetting = async () => {
+        const _setting = (await dataProvider.settings.getAll())[0];
+        isMuted.current = _setting?.voiceMuted ?? false;
+        setSetting(_setting);
+    }
+
     const loadExercise = async () => {
         const _exercise = await dataProvider.exercises.getById(id);
-        setExercice(_exercise);
+        setExercise(_exercise);
+    };
+
+    const isToday = (_date) => {
+        const d1 = new Date(), d2 = new Date(_date);
+        return d1.toDateString() === d2.toDateString();
+    };
+
+    const saveSession = async () => {
+        const _session = createSession({ 
+            exerciseId: exercise.id,
+            completed: timer <= 0,
+            duration: exercise.totalDuration-timer
+        });
+        await dataProvider.sessions.create(_session);
+
+        await dataProvider.users.update(user.id, { 
+            streak: user.streak+(isToday(user.lastSessionDate) ? 0 : 1),
+            lastSessionDate: Date.now(),
+            totalTime: user.totalTime+_session.duration
+        });
+        router.push("/dashboard");
+    };
+
+    const muteVoice = async () => {
+        isMuted.current = !isMuted.current;
+        await dataProvider.settings.update(setting.id, {
+            voiceMuted: isMuted.current
+        });
     };
 
     const loadSounds = async () => {
@@ -54,21 +96,23 @@ export default function SessionContent() {
     };
 
     const playPattern = (i = 0) => {
-        if(!paused.current) setPattern(exercice.pattern[i]);
-        if(!paused.current && !isMuted.current) playSound(exercice.pattern[i].phase);
-        phase.current = setTimeout(() => playPattern(i+1 > exercice.pattern.length-1 ? 0 : i+1), exercice.pattern[i].duration*1000);
+        if (!paused.current) setPattern(exercise.pattern[i]);
+        if (!paused.current && !isMuted.current) playSound(exercise.pattern[i].phase);
+        phase.current = setTimeout(() => playPattern(i+1 > exercise.pattern.length-1 ? 0 : i+1), exercise.pattern[i].duration*1000);
     };
 
     useEffect(() => {
+        loadUser();
+        loadSetting();
         loadExercise();
         loadSounds();
         return () => clearTimeout(phase.current);
     }, [router]);
 
     useEffect(() => {
-        if(isStarting) {
+        if (isStarting) {
             paused.current = false;
-            setTimer(exercice.totalDuration);
+            setTimer(exercise.totalDuration);
             setIsPlaying(true);
             playPattern(0);
         }
@@ -76,7 +120,7 @@ export default function SessionContent() {
 
     useEffect(() => {
         paused.current = !isPlaying;
-        if (isPlaying && timer <= 0) router.push("/dashboard");
+        if (isPlaying && timer <= 0) saveSession();
         if (!isPlaying || timer <= 0) return;
         const interval = setInterval(() => setTimer(prev => prev - 1), 1000);
         return () => clearInterval(interval);
@@ -95,7 +139,7 @@ export default function SessionContent() {
 
     return (
         <div id="session">
-            <h2>{exercice.name}</h2>
+            <h2>{exercise.name}</h2>
             {!isStarting && <>
                 <p className="fadeIn">
                     {"Préparez-vous...".split("").map((char, i) => (
@@ -108,13 +152,13 @@ export default function SessionContent() {
                 <BreathCircle pattern={pattern ?? {phase: "inhale", duration: 3}} />
                 <div className="column">
                     <div className="row">
-                        <span onClick={() => isMuted.current = !isMuted.current}>{isMuted.current ? VolumeOffIcon : Volume2Icon}</span>
+                        <span onClick={() => muteVoice()}>{isMuted.current ? VolumeOffIcon : Volume2Icon}</span>
                     </div>
                     <span>{formatTimer(timer)}</span>
                     <div className="row">
                         {isPlaying && <button onClick={() => setIsPlaying(false)}>{PauseIcon}</button>}
                         {!isPlaying && <button onClick={() => setIsPlaying(true)}>{PlayIcon}</button>}
-                        <button onClick={() => router.push("/dashboard")}>{SquareIcon}</button>
+                        <button onClick={() => saveSession()}>{SquareIcon}</button>
                     </div>
                 </div>
             </>}
