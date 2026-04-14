@@ -35,5 +35,6 @@ div#settings > div > div:last-of-type > button { background-color: darkred; }
 
 div#settings > div > button {
     width: 70vw;
+    max-width: 500px;
     background-color: var(--primary-color);
 }

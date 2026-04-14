@@ -58,6 +58,10 @@ div#dashboard div.tabs > span {
     cursor: pointer;
 }
 
+@media (max-width: 650px) {
+    div#dashboard div.tabs > span { flex-direction: column; }
+}
+
 div#dashboard div.tabs > span.active {
     background-color: white;
     opacity: 1;

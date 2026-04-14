@@ -36,7 +36,7 @@ img, svg {
 
 html { 
     overflow-x: hidden; 
-    overflow-y: scroll;
+    overflow-y: auto;
     scroll-behavior: smooth; 
 }
 
@@ -49,7 +49,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 body > div { flex: 1; }
 

@@ -12,14 +12,14 @@ export default function DashboardPage() {
     const router = useRouter();
     const [setting, setSetting] = useState({});
     const [selectedGoal, setSelectedGoal] = useState(null);
-    const [isVoiceMuted, setIsVoiceMuted] = useState(null);
+    const [isVoiceMuted, setIsVoiceMuted] = useState(false);
     const [isNotificationsEnabled, setIsNotificationEnabled] = useState(null);
     const [selectedTime, setSelectedTime] = useState("09:00");
 
     const goals = [
         { value: "relaxation", label: "Relaxation" },
         { value: "performance", label: "Performance" },
-        { value: "endurance", label: "Endurance" },
+        { value: "endurance", label: "Endurance" }
     ];
 
     const getICSContent = (startDate) => {
@@ -149,7 +149,7 @@ END:VCALENDAR`;
                     <p>Personnalisez votre exprience d&apos;entrainement.</p>
                     <div className="row">
                         <span>Accompagnement par la voix :</span>
-                        <select value={isVoiceMuted ?? false} onChange={(e) => setIsVoiceMuted(e.target.value)}>
+                        <select value={!isVoiceMuted} onChange={(e) => setIsVoiceMuted(!e.target.value)}>
                             <option value={true}>Activer</option>
                             <option value={false}>Désactiver</option>
                         </select>
